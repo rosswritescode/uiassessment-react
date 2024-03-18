@@ -5,8 +5,7 @@ function CreatePost() {
 	const { addPost, saveDraft } = useApi();
 
 	// 1. Call the addPost function when the "Add Post" is clicked
-	// 2. Add validation to require a title and content
-	// 3. Auto-save after 5 seconds of inactivity
+	// 2. Auto-save after 5 seconds of inactivity
 
 	return (
 		<form>
