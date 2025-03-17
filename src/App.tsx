@@ -1,15 +1,18 @@
 import React from 'react';
 import CreatePost from './components/CreatePost/CreatePost';
 import PostsList from './components/PostsList/PostsList';
+import { PostProvider } from './PostContext';
 
 function App() {
   return (
-    <div className="row justify-content-center">
-      <div className="col-6">
-        <CreatePost />
-        <PostsList />
+    <PostProvider>
+      <div className="row justify-content-center">
+        <div className="col-6">
+          <CreatePost />
+          <PostsList />
+        </div>
       </div>
-    </div>
+    </PostProvider>
   );
 }
 

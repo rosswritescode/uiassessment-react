@@ -1,25 +1,27 @@
+import { usePostContext } from "../PostContext";
+
 export type Post = {
 	title: string;
 	content: string;
 }
 
 function useApi() {
-	const posts: Post[] = [];
+	const { state, dispatch } = usePostContext();
 
 	const addPost = (post: Post) => {
 		// alert the post details
 		alert(JSON.stringify(post));
-		posts.push(post);
+		dispatch({ type: 'ADD_POST', payload: post });
 	}
 
 	const saveDraft = (post: Post) => {
-		console.log('Draft saved:', post);
+		dispatch({ type: 'SAVE_DRAFT', payload: post });
 	}
 
 	return {
 		addPost,
 		saveDraft,
-		posts
+		posts: state.posts
 	}
 }
 
